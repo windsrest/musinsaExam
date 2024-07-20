@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:musinsadb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
+    show-sql: true
+  sql:
+    init:
+      mode: always
+  h2:
+    console:
+      enabled: true
+  api-docs:
+    path: /api-docs
+    swagger-ui:
+      path: /swagger-ui.html
+      operationsSorter: method
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
